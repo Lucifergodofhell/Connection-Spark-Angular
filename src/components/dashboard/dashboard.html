@@ -1,0 +1,7 @@
+<div class="grid-container">
+  @for (member of members$ | async; track member.id) {
+    <div (click)="toMemberProfile(member)">
+      <member-card [member]="member"></member-card>
+    </div>
+  }
+</div>

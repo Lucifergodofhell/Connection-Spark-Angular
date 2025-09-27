@@ -1,0 +1,180 @@
+.profile-container {
+  max-width: 1000px; /* Limit width for readability */
+  margin: 20px auto; /* Center the container */
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333333; /* Dark text for contrast */
+}
+
+/* Header: Side-by-side layout for details and image */
+.profile-header {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 30px; /* Space between details and image */
+  align-items: flex-start; /* Align items to top */
+}
+
+/* Left: Details Section */
+.details-section {
+  flex: 1; /* Take available space */
+  min-width: 300px; /* Minimum width for smaller screens */
+  padding: 20px;
+}
+
+.details-section h2 {
+  margin: 0 0 15px;
+  font-size: 2.2em;
+  color: #222222;
+  font-weight: 600;
+}
+
+.details-section p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.details-section p strong {
+  color: #000000; /* Bold labels */
+}
+
+/* Right: Profile Picture */
+.image-section {
+  flex: 0 0 320px; /* Fixed width for image */
+  display: flex;
+  justify-content: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  object-fit: cover; /* Ensure image fits nicely */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0f0f0; /* Subtle border */
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin: 20px 0;
+}
+
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dislike-btn {
+  background-color: #ff4d4f; /* Red for dislike */
+  color: #ffffff;
+}
+
+.dislike-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.like-btn {
+  background-color: #52c41a; /* Green for like */
+  color: #ffffff;
+}
+
+.like-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.favorite-btn {
+  background-color: #ff69b4; /* Pink for favorite */
+  color: #ffffff;
+}
+
+.favorite-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Bottom: Photos Section */
+.photos-section {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.photos-section h3 {
+  margin: 0 0 15px;
+  font-size: 1.5em;
+  color: #222222;
+  font-weight: 500;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive grid */
+  gap: 15px; /* Space between photos */
+}
+
+.photos-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photos-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+  .profile-header {
+    flex-direction: column; /* Stack details and image */
+    align-items: center;
+  }
+
+  .image-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+  }
+}
+
+@media (max-width: 500px) {
+  .details-section {
+    padding: 15px;
+  }
+
+  .photos-grid {
+    grid-template-columns: 1fr; /* 1 photo per row */
+  }
+
+  .action-buttons button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+}

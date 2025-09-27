@@ -1,0 +1,26 @@
+<body class="min-h-screen">
+    <section class="signup-section">
+        <h2 class="signup-title">Spart Your Connection</h2>
+        <p class="signup-subtitle">Join Splitwise to track and split expenses with ease.</p>
+        <form class="signup-form">
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="UserName"  [(ngModel)]="registerForm.UserName" class="form-input" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label" >Email Address</label>
+                <input type="email" id="email" name="email" [(ngModel)]="registerForm.email" class="form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phonenumber" class="form-label" >Phone Number</label>
+                <input type="phone" id="phoneNumber" class="form-input" placeholder="Phone number" name="phoneNumber" [(ngModel)]="registerForm.phoneNumber">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Create a password" name="password"  [(ngModel)]="registerForm.password" required>
+            </div>
+            <button type="submit" class="submit-btn" (click)="submitForm()">Sign me Up !!</button>
+            <p class="form-footer">Already have an account? <a  class="form-link" (click)="backtoLogin()">Log in</a></p>
+        </form>
+    </section>
+</body>

@@ -1,0 +1,52 @@
+<div class="card">
+  <figure>
+    <img [src]="member().imageUrl || '/profile.jpg'" alt="{{member().displayName}} image" />
+  </figure>
+  <div class="card-action">
+    <h2 class="card-title">{{member().displayName}}</h2>
+    <p>City: {{member().city}}</p>
+  </div>
+</div>
+
+<style>
+.card {
+  background-color: #1a1a1a; /* Black background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  overflow: hidden;
+  color: #ffffff; /* White text for contrast */
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.card figure {
+  margin: 0;
+  width: 100%;
+  height: 200px; /* Fixed height for image */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fits nicely */
+}
+
+.card-action {
+  padding: 15px;
+  text-align: center;
+  margin-top: 15px; /* Added space between image and card-action */
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ffffff; /* White title */
+}
+
+.card-action p {
+  margin: 8px 0 0;
+  font-size: 1em;
+  color: #cccccc; /* Light gray for secondary text */
+}
+</style>

@@ -1,0 +1,212 @@
+/* Tailwind CSS base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    background-color: #f7fafc;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FE3C72;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
+}
+
+.auth-btn.sign-in {
+    background-color: #FE3C72;
+}
+
+.auth-btn.sign-in:hover {
+    background-color: #FE3C72;
+    transform: translateY(-2px);
+}
+
+.auth-btn.sign-up {
+    background-color: #2d3748;
+}
+
+.auth-btn.sign-up:hover {
+    background-color: #1f2937;
+    transform: translateY(-2px);
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #FE3C72;
+    margin-bottom: 1rem;
+}
+
+.welcome-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        .user-container {
+            position: unset;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .user-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 120px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+   .button-container {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Space between buttons */
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+        .home-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(45deg, #FE3C72, #FE3C72); /* Gradient for shine */
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        .home-btn:hover {
+            background: linear-gradient(45deg, #161616, #FE3C72); /* Reverse gradient on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Glow effect */
+            transform: translateY(-2px); /* Slight lift */
+        }
+
+        .home-btn:active {
+            transform: translateY(0); /* Pressed effect */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Shiny effect */
+        .home-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .home-btn:hover::before {
+            left: 100%; /* Shine moves across */
+        }
+
+        /* Responsive design: Reduce button size on smaller screens */
+        @media (max-width: 600px) {
+            .home-btn {
+                padding: 10px 20px; /* Smaller padding */
+                font-size: 14px; /* Smaller font */
+            }
+            .button-container {
+                gap: 10px; /* Reduced gap */
+            }
+        }
+    

@@ -1,0 +1,49 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <!-- Left: Member Details -->
+    <div class="details-section">
+      <h2>{{member.displayName}}</h2>
+      <p><strong>City:</strong> {{member.city}}, {{member.country}}</p>
+      <p><strong>Gender:</strong> {{member.gender}}</p>
+      <p><strong>Age:</strong> {{calculateAge(member.dateOfBirth)}}</p>
+      <p><strong>Last Active:</strong> {{member.lastActive}}</p>
+      <p><strong>Joined:</strong> {{member.created}}</p>
+      <p *ngIf="member.description"><strong>About:</strong> {{member.description}}</p>
+    </div>
+    <!-- Right: Profile Picture -->
+    <div class="image-section">
+      <img [src]="member.imageUrl || '/profile.jpg'" alt="{{member.displayName}} profile picture" />
+    </div>
+  </div>
+  <!-- Buttons: Like, Dislike, Favorite -->
+  <div class="action-buttons">
+    <button class="like-btn" (click)="like(member.id)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#52c41a" stroke-width="2">
+        <path d="M5 13l4 4L19 7"/>
+      </svg>
+      ❤️Like
+    </button>
+    <button class="dislike-btn" (click)="dislike(member.id)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ff4d4f" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+      ❌Dislike
+    </button>
+    <!-- <button class="favorite-btn" (click)="favorite(member.id)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ff69b4" stroke-width="2">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      Favorite
+    </button> -->
+  </div>
+  <!-- Bottom: Additional Photos -->
+  <div class="photos-section" *ngIf="member.photos && member.photos.length > 0">
+    <h3>More Photos</h3>
+    <div class="photos-grid">
+      @for (photo of member.photos; track photo.id) {
+        <img [src]="photo.url || '/placeholder.jpg'" alt="Member photo" />
+      }
+    </div>
+  </div>
+</div>
+

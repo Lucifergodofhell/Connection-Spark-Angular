@@ -1,0 +1,83 @@
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the grid */
+  justify-content: center; /* Center the grid */
+  max-width: 1500px; /* Adjusted for 5 cards */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Styling for the individual card wrapper */
+.grid-container > div {
+  display: flex;
+  justify-content: center; /* Center the member-card inside */
+}
+
+/* Styling for the <member-card> component */
+member-card {
+  display: block;
+  background-color: #1a1a1a; /* Black background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 260px; /* Slightly reduced width to fit 5 cards comfortably */
+  overflow: hidden;
+  color: #ffffff; /* White text for contrast */
+  font-family: Arial, sans-serif;
+}
+
+member-card figure {
+  margin: 0;
+  width: 100%;
+  height: 200px; /* Fixed height for image */
+}
+
+member-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fits nicely */
+}
+
+member-card .card-action {
+  padding: 20px; /* Padding for content */
+  text-align: center;
+  margin-top: 15px; /* Space between image and text */
+}
+
+member-card .card-title {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ffffff; /* White title */
+}
+
+member-card .card-action p {
+  margin: 8px 0 0;
+  font-size: 1em;
+  color: #cccccc; /* Light gray for secondary text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1400px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+}
